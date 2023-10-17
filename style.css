@@ -21,9 +21,9 @@ body {
     background-color: rgb(26, 23, 23);
     display: flex;
     flex-direction: column;
-    height: 90vh;
-    width: 50vh;
-    min-width: 50vh;
+    height: 760px;
+    width: 390px;
+    min-width: 40px;
     border-radius: 40px;
 }
 .screen {
