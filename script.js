@@ -10,10 +10,65 @@ let displayObj = {
 }
 function add(num1, num2) {
     ans = num1 + num2;
+    let newthing = ans.toString();
+    if(newthing.includes(".")){
+        let what = newthing.split("");
+        let sum = 0;
+        let dum = 0;
+        for (let j = 0; j < what.length-1; j++ ){
+            dum += 1;
+        }
+        let i = what.length-1;
+        while (what[i] != ".") {
+            sum += 1;
+            i--;
+        }
+        if(sum > 11){
+            ans = +ans;
+            ans = ans.toFixed(8);
+        }
+        if (dum > 12){
+            ans = +ans;
+            ans = ans.toFixed(4);
+        }
+        if (sum + dum > 14){
+            ans = +ans;
+            ans = ans.toFixed(4);
+        }
+    }
     return '' + ans;
+    
 }
 function subtract(num1, num2) {
     ans = num1 - num2;
+    let newthing = ans.toString();
+    if(newthing.includes(".")){
+        let what = newthing.split("");
+        let sum = 0;
+        let dum = 0;
+        let j = 0;
+        while (what[j] != "."){
+            dum += 1;
+            j++
+        }
+        let i = what.length-1;
+        while (what[i] != ".") {
+            sum += 1;
+            i--;
+        }
+        if(sum > 11){
+            ans = +ans;
+            ans = ans.toFixed(8);
+        }
+        if (dum > 12){
+            ans = +ans;
+            ans = ans.toFixed(2);
+        }
+        if (sum + dum > 14){
+            ans = +ans;
+            ans = ans.toFixed(4);
+        }
+    }
     return '' + ans;
 }
 function multiply(num1, num2) {
@@ -26,6 +81,12 @@ function divide(num1, num2) {
     if(newthing.includes(".")){
         let what = newthing.split("");
         let sum = 0;
+        let dum = 0;
+        let j = 0;
+        while (what[j] != "."){
+            dum += 1;
+            j++
+        }
         let i = what.length-1;
         while (what[i] != ".") {
             sum += 1;
@@ -33,7 +94,15 @@ function divide(num1, num2) {
         }
         if(sum > 11){
             ans = +ans;
-            ans = ans.toFixed(12);
+            ans = ans.toFixed(8);
+        }
+        if (dum > 12){
+            ans = +ans;
+            ans = ans.toFixed(2);
+        }
+        if (sum + dum > 14){
+            ans = +ans;
+            ans = ans.toFixed(4);
         }
     }
     return '' + ans;
