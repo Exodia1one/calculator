@@ -31,7 +31,7 @@ function add(num1, num2) {
             ans = +ans;
             ans = ans.toFixed(4);
         }
-        if (sum + dum > 14){
+        if (sum + dum > 20){
             ans = +ans;
             ans = ans.toFixed(4);
         }
@@ -62,9 +62,9 @@ function subtract(num1, num2) {
         }
         if (dum > 12){
             ans = +ans;
-            ans = ans.toFixed(2);
+            ans = ans.toFixed(4);
         }
-        if (sum + dum > 14){
+        if (sum + dum > 20){
             ans = +ans;
             ans = ans.toFixed(4);
         }
@@ -98,9 +98,9 @@ function divide(num1, num2) {
         }
         if (dum > 12){
             ans = +ans;
-            ans = ans.toFixed(2);
+            ans = ans.toFixed(4);
         }
-        if (sum + dum > 14){
+        if (sum + dum > 20){
             ans = +ans;
             ans = ans.toFixed(4);
         }
@@ -131,7 +131,7 @@ function operate(num1, operator, num2) {
     displayObj.num2 = '';
 }
 function main() {
-    window.addEventListener('click', event => {
+    window.addEventListener('mousedown', event => {
         if(event.target.nodeName == 'LI' || event.target.className == 'del' || event.target.className == 'ac') {
             event.target.style.top = '0px';
             if(event.target.className.includes('operator') && displayObj.operator == '') {
