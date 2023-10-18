@@ -22,6 +22,20 @@ function multiply(num1, num2) {
 }
 function divide(num1, num2) {
     ans = num1 / num2;
+    let newthing = ans.toString();
+    if(newthing.includes(".")){
+        let what = newthing.split("");
+        let sum = 0;
+        let i = what.length-1;
+        while (what[i] != ".") {
+            sum += 1;
+            i--;
+        }
+        if(sum > 11){
+            ans = +ans;
+            ans = ans.toFixed(12);
+        }
+    }
     return '' + ans;
 }
 function modulo(num1, num2) {
@@ -57,6 +71,7 @@ function main() {
             } else if (event.target.className == 'button digit' && displayObj.operator === '') {
                 displayObj.num1 += event.target.textContent;
                 display.textContent = displayObj.num1;
+                
             } else if (event.target.className == 'button decimal' && !(displayObj.num1.includes('.')) && displayObj.operator === '') {
                 displayObj.num1 += event.target.textContent;
                 display.textContent = displayObj.num1;
